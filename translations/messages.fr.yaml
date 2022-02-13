@@ -1,0 +1,17 @@
+##########
+# Header #
+##########
+header:
+  link:
+    home: "Accueil"
+    products: "Les produits"
+    categories: "Les catégories"
+    profile: 'Mon profil'
+    login: 'Se connecter'
+    logout: 'Se déconnecter'
+
+##############
+# Login Page #
+##############
+login:
+  submit: 'Se connecter'
