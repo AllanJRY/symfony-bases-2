@@ -73,4 +73,33 @@ class Cart
 
         return $this;
     }
+
+
+    /**
+     * Return the final count of products in the cart.
+     * @return int
+     */
+    public function totalProductsCount(): int {
+        $totalProducts = 0;
+
+        foreach ($this->cartProducts as $cartProduct) {
+            $totalProducts += $cartProduct->getQuantity();
+        }
+
+        return $totalProducts;
+    }
+
+    /**
+     * Return the total price of the cart.
+     * @return float
+     */
+    public function totalPrice(): float {
+        $totalPrice = 0;
+
+        foreach ($this->cartProducts as $cartProduct) {
+            $totalPrice += $cartProduct->getQuantity() * $cartProduct->getProduct()->getPrice();
+        }
+
+        return $totalPrice;
+    }
 }

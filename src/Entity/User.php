@@ -51,6 +51,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
+        if (!$this->cart instanceof Cart) {
+            $this->cart = (new Cart())->setOwner($this);
+        }
     }
 
     public function getId(): ?Uuid

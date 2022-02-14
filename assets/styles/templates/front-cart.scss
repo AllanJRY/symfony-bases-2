@@ -1,0 +1,10 @@
+.front-cart {
+  .cart-product-row {
+    border: 1px solid $black;
+
+    &:hover {
+      background-color: lighten(black, 90);
+      cursor: pointer;
+    }
+  }
+}

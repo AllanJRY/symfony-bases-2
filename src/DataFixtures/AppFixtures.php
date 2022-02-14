@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Cart;
 use App\Entity\Category;
 use App\Entity\Product;
 use App\Entity\Review;
@@ -36,6 +37,7 @@ class AppFixtures extends Fixture
             ->setLastname('ADMIN')
             ->setFirstname('Admin')
             ->setRoles(['ROLE_ADMIN', 'ROLE_USER'])
+            ->setCart((new Cart())->setOwner($admin))
         ;
         $this->manager->persist($admin);
 
@@ -91,6 +93,7 @@ class AppFixtures extends Fixture
             $newProduct = (new Product())
                 ->setName($this->faker->words(rand(1, 5), true))
                 ->setDescription($this->faker->words(rand(2, 20), true))
+                ->setPrice(19.99)
             ;
 
             $categIndexes = array_rand($categories, rand(2, 3));
@@ -108,7 +111,7 @@ class AppFixtures extends Fixture
                     ( new Review() )
                         ->setAuthor($users[array_rand($users)])
                         ->setContent($this->faker->words(rand(2, 20), true))
-                        ->setNote(rand(0, 10))
+                        ->setNote(rand(0, 5))
                 );
             }
 

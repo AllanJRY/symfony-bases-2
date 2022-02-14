@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cart.title' | trans }}{% endblock %}
+
+{% block body_class %}front-cart{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <h2>{{ 'cart.title' | trans }} (1)</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="cart-product-row d-flex justify-content-between align-items-center rounded-3 p-3 my-2">
+                    <h3>
+                        <a href="#" class="text-dark">Nom produit</a>
+                    </h3>
+                    <p class="m-0">
+                        Quantité : 2
+                        {# todo add quantity decreasing form #}
+                    </p>
+                </div>
+                <hr>
+            </div>
+
+            <div class="col-12 d-flex justify-content-end mt-3">
+                <h3>Prix total: 20 €</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

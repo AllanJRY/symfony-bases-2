@@ -1,0 +1,43 @@
+{# todo replace product placeholder text by product's data #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'products_show.title' | trans({'%product_name%' : 'Product name'}) }}{% endblock %}
+
+{% block body_class %}front-products-show{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <img class="product-img" src="https://via.placeholder.com/300.png" alt="Product name">
+            </div>
+            <div class="col-12 col-md-8 d-flex flex-column justify-content-between">
+                <div>
+                    <h2>Product name</h2>
+                    <hr>
+                    <h3>{{ 'products_show.description.label' | trans }}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis distinctio dolorem et maxime, modi natus, nemo odio omnis perspiciatis praesentium, provident quibusdam rem reprehenderit tempora temporibus ullam voluptas voluptates voluptatum.</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h3>{{ 'products_show.price.label' | trans }}</h3>
+                        <p><strong>20.99 €</strong></p>
+                    </div>
+                    {# todo replace with a form #}
+                    <input class="btn btn-dark" type="submit" value="{{ 'products_show.add_to_cart.label' | trans }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 my-3">
+                <hr>
+                <h3>{{ 'products_show.review.title' | trans({'%nb_review%': 1}) }}</h3>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                {% include 'partials/components/cards/review_card.html.twig' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

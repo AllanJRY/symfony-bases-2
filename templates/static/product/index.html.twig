@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'products_index.title' | trans }}{% endblock %}
+
+{% block body_class %}front-products-index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <h2>{{ 'products_index.title' | trans }}</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card-wrapper mb-3">
+                    {% include 'partials/components/cards/product_card.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+.product-card {
+  height: 400px;
+
+  .card-img-top {
+    height: 40%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .product-price {
+    font-size: 2rem;
+  }
+}

@@ -9,9 +9,113 @@ header:
     profile: 'Mon profil'
     login: 'Se connecter'
     logout: 'Se déconnecter'
+    cart: 'Mon panier'
+    admin: 'Administration'
 
 ##############
 # Login Page #
 ##############
 login:
   submit: 'Se connecter'
+
+
+######################################
+# Front office products listing page #
+######################################
+products_index:
+  title: 'Liste des produits'
+
+######################################
+# Front office products details page #
+######################################
+products_show:
+  title: 'Détails produit : %product_name%'
+  description:
+    label: 'Description'
+  price:
+    label: 'Prix'
+  add_to_cart:
+    label: 'Ajouter au panier'
+  review:
+    title: 'Avis (%nb_review%)'
+
+########################################
+# Front office categories listing page #
+########################################
+categories_index:
+  title: 'Liste des catégories'
+
+######################################
+# Front office category details page #
+######################################
+categories_show:
+  title: 'Produit de la catégorie : %category_name%'
+
+
+##########################
+# Front office Cart page #
+##########################
+cart:
+  title: 'Mon panier'
+  empty: 'Panier vide !'
+  total_price: 'Prix total : %total_price% €'
+  product_quantity: 'Quantité : %product_quantity%'
+  decrease_product: 'Diminuer'
+
+###########
+# Sidebar #
+###########
+sidebar:
+  link:
+    users: 'Liste des utilisateurs'
+    categories: 'Liste des categories'
+    products: 'Liste des produits'
+    back_to_site: 'Retour à la boutique'
+
+################
+# Product card #
+################
+product_card:
+  details: 'Voir plus'
+review_card:
+  author: 'De %author%'
+  note: 'Note : %note%/5'
+
+##########################
+# Admin users index page #
+##########################
+admin_users_index:
+  title: 'Admin : Liste des utilisateurs'
+  table:
+    heading:
+      email: 'Email'
+      lastname: 'Nom'
+      firstname: 'Prénom'
+      actions: 'Actions'
+    body:
+      action:
+        see: 'Voir'
+        edit: 'Éditer'
+  add_user: 'Ajouter un utilisateur'
+
+############################
+# Admin user creation page #
+############################
+admin_users_new:
+  title: "Création d'un utilisateur"
+  back_index: 'Retour à la liste'
+
+#############
+# User Form #
+#############
+user_form:
+  email:
+    label: 'Email'
+  lastname:
+    label: 'Nom'
+  firstname:
+    label: 'Prénom'
+  password:
+    label: 'Mot de passe'
+  roles:
+    label: 'Rôles'

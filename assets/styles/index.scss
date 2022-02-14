@@ -1,1 +1,17 @@
 @import '~bootstrap';
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+
+@import "./variables";
+
+// general
+@import "./base/general";
+@import "./base/text";
+
+// Components
+@import "./component/product-card";
+@import "./component/sidebar";
+
+// Templates
+@import "./templates/front-products-show";
+@import "./templates/front-cart";

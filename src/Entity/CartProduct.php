@@ -14,7 +14,7 @@ class CartProduct
     private $id;
 
     #[ORM\Column(type: 'integer')]
-    private $quantity;
+    private $quantity = 1;
 
     #[ORM\ManyToOne(targetEntity: Product::class)]
     #[ORM\JoinColumn(nullable: false)]

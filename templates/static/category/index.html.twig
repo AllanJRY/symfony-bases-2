@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'categories_index.title' | trans }}{% endblock %}
+
+{% block body_class %}front-categories-index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <h2>{{ 'categories_index.title' | trans }}</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+                <h3 class="bg-dark p-2 rounded-3 text-center">
+                    <a href="#" class="text-white">Nom categorie <span class="badge bg-light text-dark">10</span></a>
+                </h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

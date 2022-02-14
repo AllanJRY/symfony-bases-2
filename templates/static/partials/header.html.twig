@@ -1,0 +1,46 @@
+{# todo replace link's href with app routes #}
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid justify-content-center justify-content-md-start">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Boutique</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ path('home') }}">{{ 'header.link.home' | trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'header.link.products' | trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ 'header.link.categories' | trans }}</a>
+                </li>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{ 'header.link.cart' | trans }}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{ 'header.link.profile' | trans }}</a>
+                    </li>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('admin_home_index') }}">{{ 'header.link.admin' | trans }}</a>
+                        </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">{{ 'header.link.logout' | trans }}</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">{{ 'header.link.login' | trans }}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
