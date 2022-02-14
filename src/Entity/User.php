@@ -42,18 +42,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255, unique: true)]
     private $slug;
 
-    #[ORM\OneToMany(mappedBy: 'author', targetEntity: Review::class, orphanRemoval: true)]
-    private $reviews;
-
-    #[ORM\OneToOne(mappedBy: 'owner', targetEntity: Cart::class, cascade: ['persist', 'remove'])]
-    private $cart;
-
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
-        if (!$this->cart instanceof Cart) {
-            $this->cart = (new Cart())->setOwner($this);
-        }
     }
 
     public function getId(): ?Uuid
@@ -177,53 +168,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Review[]
-     */
-    public function getReviews(): Collection
-    {
-        return $this->reviews;
-    }
-
-    public function addReview(Review $review): self
-    {
-        if (!$this->reviews->contains($review)) {
-            $this->reviews[] = $review;
-            $review->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeReview(Review $review): self
-    {
-        if ($this->reviews->removeElement($review)) {
-            // set the owning side to null (unless already changed)
-            if ($review->getAuthor() === $this) {
-                $review->setAuthor(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getCart(): ?Cart
-    {
-        return $this->cart;
-    }
-
-    public function setCart(Cart $cart): self
-    {
-        // set the owning side of the relation if necessary
-        if ($cart->getOwner() !== $this) {
-            $cart->setOwner($this);
-        }
-
-        $this->cart = $cart;
 
         return $this;
     }
