@@ -16,16 +16,6 @@ Créer la base de données :
 symfony console doctrine:database:create
 ```
 
-Lancer les migrations :
-```shell
-symfony console doctrine:migrations:migrate
-```
-
-Charger les fixtures :
-```shell
-symfony console doctrine:fixtures:load
-```
-
 Installer les assets :
 ```shell
 yarn install
@@ -42,7 +32,7 @@ yarn watch
 ## La boutique (Front Office)
 
 ### Diagramme de classe
-Voici le diagramme de classe de l'application, attention, vous n'êtes pas obligez de faire les entités, elles sont déjà disponibles sur le repo.
+Diagramme de classe de l'application
 
 ![](C:\dev\formation\symfony-bases-2\ressources-enonce\diagram-classes.png)
 
